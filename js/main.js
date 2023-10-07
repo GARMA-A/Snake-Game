@@ -94,7 +94,7 @@ function update()
   {
     if(level !== 5 || level !== 10 || level !== 15)
     {
-      levels.innerHTML = "Level "+level+"``FASTER 🐍 EVER`` ";
+      levels.innerHTML = "Level "+level+"``FASTER SNAKE EVER``🐍🐍   ";
     }
     if(level === 5)
     {
