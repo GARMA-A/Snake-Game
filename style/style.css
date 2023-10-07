@@ -1,0 +1,705 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html
+{
+    box-sizing: border-box;
+    font-size:  62.5%;
+}
+
+.container
+{
+   height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr min-content 1fr;
+    grid-template-rows: repeat(3,1fr);
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right bottom , #2c527b,#3a2c57);
+   
+   
+}
+
+.animation
+{
+
+       animation-name: container;
+       animation-duration: 3s;
+       animation-iteration-count: infinite;
+       animation-timing-function: linear;
+}
+
+canvas
+{
+    z-index: 150;
+    width: 65vw;
+    height: 80vh;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    border: 0.5rem solid black;
+    border-radius: 1rem;
+    box-shadow: 0  0  25px 20px rgba(0,0,0,.6);
+    filter: blur(20px);
+    
+ 
+   
+}
+.levels
+{
+
+  position: absolute;
+  bottom: 90%;
+  z-index: 300;
+  width: 100vw;
+ opacity: 40%;
+ text-align: center;
+ font-size: 3rem;
+ background-image: linear-gradient(to right , #c1ee4e,#36f111);
+}
+
+
+
+.all-txt
+{
+   position: absolute;
+ grid-row: 1/4;
+ grid-column: 1/4;
+ z-index: 200;
+background-image: linear-gradient(to right top , #0b0e2a,#394a65,#394a65,#394a65,#394a65,#394a65,#403965,#0b0e2a);
+ padding: 1rem;
+ width: 80%;
+ height: 80%;
+ justify-self: center;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-around;
+ align-items: center;
+ border-radius: 1rem;
+ opacity: 70%;
+ 
+}
+.flex
+{
+  position: absolute;
+
+    grid-row: 1/4;
+    grid-column: 1/4;
+    z-index: 110;
+    width: 80%;
+    height: 80%;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 300;
+}
+
+.txt
+{
+   
+ font-size: 3rem;
+ font-family: sans-serif;
+ background-image: linear-gradient(to right,#3b5382, #3e366f, #3e366f, #3e366f, #3e366f, #3e366f,#3b5382);
+ padding: 1rem;
+ border-radius: 1rem;
+ box-shadow: 0 0 50px 10px #06122286,
+ 0 0 15px 5px #0b092876,
+ 0 0 15px 5px rgba(0, 0, 0, 0.302);
+ 
+
+ 
+}
+.btn
+{
+ border: none;
+ outline: none;
+ padding: 1rem;
+ border-radius: 1rem;
+ font-size: 3rem;
+ font-family: sans-serif;
+ background-image: linear-gradient(to right,#8175b6,#7580d1,#8175b6);
+ box-shadow: 0 0 50px 10px #06122286,
+ 0 0 15px 5px #0b092876,
+ 0 0 15px 5px rgba(0, 0, 0, 0.302);
+ transition: all 0.5s;
+ cursor: pointer;
+ 
+}
+.imgs
+{
+  position: absolute;
+
+    
+}
+.cont{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.img1
+{
+    
+  height: 100vh;
+  width: 20vw;
+  opacity: 15%;
+ 
+}
+.killBlur
+{
+    animation-name: noBlur;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.remove
+{
+   animation-name: kill;
+   animation-duration: 1s;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+   display: none;
+  
+   
+}
+.img2
+{
+   
+    height: 100vh;
+    width: 20vw;
+    opacity: 15%;
+    transform: scaleX(-1);
+}
+.btn:hover
+{
+    transform: scale(1.05);
+}
+.btn:active{
+    transform: scale(0.98);
+ 
+}
+
+.arrows
+{
+  position: absolute;
+  top: 60%;
+  z-index: 145;
+}
+.up
+{
+  opacity: 0;
+}
+.down{
+  opacity: 0;
+}
+.left
+{
+  opacity: 0;
+}
+.right
+{
+  opacity: 0;
+}
+.gameOver 
+{
+  
+  position: absolute;
+  grid-row: 2/3;
+  grid-column: 2/3;
+ font-size: 2.5rem;
+ font-family: sans-serif;
+ z-index: 400;
+ text-align: center;
+ justify-self: center;
+ animation-name: ChangeColor;
+ animation-duration: 3s;
+ animation-iteration-count: infinite;
+ animation-timing-function: linear;
+ padding: 1.5rem;
+ border-radius: 1rem;
+ display: none;
+ cursor: pointer;
+
+
+
+}
+.restart
+{
+ 
+  padding: 2rem;
+  font-size: 2rem;
+  border:none;
+  outline: none;
+  border-radius: 1rem;
+  position: relative;
+  top: 1rem;
+  transition: all 0.1s;
+  background-color: #c63e5b;
+  font-family: sans-serif;
+
+}
+.restart:active
+{
+  transform: scale(0.98);
+  background-color: #b25959;
+}
+
+.backToLive
+{
+  display: grid;
+  animation-name: backLive;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+ 
+
+}
+
+@keyframes noBlur
+{
+    0%
+    {
+      
+        filter: blur(10px);
+    }
+    100%
+    {
+      
+        filter: blur(0px);
+    }
+}
+@keyframes kill {
+    0%
+    {
+     opacity: 1;
+    }
+   
+    100%
+    {
+      opacity: 0;
+       
+
+    
+    }
+    
+}
+.kill
+{
+  animation-name: kill;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes backLive {
+  0%
+  {
+   
+    opacity: 0;
+  }
+  100%
+  {
+     
+      opacity: 1;
+  }
+  
+}
+@keyframes container {
+    0%
+    {
+        transform: scale(1);
+        box-shadow: 0 0 10px 10px #061222,
+        0 0 30px 20px #0b0928,
+        0 20px 40px 20px rgba(0,0,0,.6);
+       
+        
+       
+    }
+    50%
+    {
+        transform:  scale(1.05);   
+        box-shadow: 0 0 0px 0px #08041b,
+        0 0 10px 10px #0b0928,
+        0 0 5px 5px rgba(0,0,0,.6);
+        
+        
+
+       
+    }
+    100%
+    {
+        transform: scale(1);
+        box-shadow: 0 0 10px 10px #04081a,
+        0 0 30px 20px #0b0928,
+        0 20px 40px 20px rgba(0,0,0,.6);
+        
+       
+      
+       
+    }
+}
+
+@keyframes ChangeColor {
+    0% {
+      background-image: linear-gradient(to right , #d18c75, #dfa66d, #d18c75, #dfa66d);
+    }
+    5% {
+      background-image: linear-gradient(to right , #d18c75, #d18c75, #dfa66d, #d18c75);
+    }
+    10% {
+      background-image: linear-gradient(to right , #d18c75, #dfa66d, #dfa66d, #d18c75);
+    }
+    15% {
+      background-image: linear-gradient(to right , #dfa66d, #d18c75, #dfa66d, #d18c75);
+    }
+    20% {
+      background-image: linear-gradient(to right , #dfa66d, #d18c75, #d18c75, #dfa66d);
+    }
+    25% {
+      background-image: linear-gradient(to right , #d18c75, #d18c75, #dfa66d, #d18c75);
+    }
+    30% {
+      background-image: linear-gradient(to right , #d18c75, #dfa66d, #d18c75, #dfa66d);
+    }
+    35% {
+      background-image: linear-gradient(to right , #dfa66d, #dfa66d, #d18c75, #d18c75);
+    }
+    40% {
+      background-image: linear-gradient(to right , #dfa66d, #d18c75, #d18c75, #dfa66d);
+    }
+    45% {
+      background-image: linear-gradient(to right , #d18c75, #d18c75, #d18c75, #dfa66d);
+    }
+    50% {
+      background-image: linear-gradient(to right , #d18c75, #dfa66d, #d18c75, #d18c75);
+    }
+    55% {
+      background-image: linear-gradient(to right , #dfa66d, #d18c75, #d18c75, #dfa66d);
+    }
+    60% {
+      background-image: linear-gradient(to right , #dfa66d, #d18c75, #dfa66d, #d18c75);
+    }
+    65% {
+      background-image: linear-gradient(to right , #d18c75, #dfa66d, #dfa66d, #d18c75);
+    }
+    70% {
+      background-image: linear-gradient(to right , #d18c75, #d18c75, #dfa66d, #d18c75);
+    }
+    75% {
+      background-image: linear-gradient(to right , #dfa66d, #d18c75, #d18c75, #dfa66d);
+    }
+    80% {
+      background-image: linear-gradient(to right , #d18c75, #d18c75, #dfa66d, #dfa66d);
+    }
+    85% {
+      background-image: linear-gradient(to right , #d18c75, #dfa66d, #d18c75, #dfa66d);
+    }
+    90% {
+      background-image: linear-gradient(to right , #dfa66d, #dfa66d, #d18c75, #d18c75);
+    }
+    95% {
+      background-image: linear-gradient(to right , #d18c75, #d18c75, #d18c75, #dfa66d);
+    }
+    100% {
+      background-image: linear-gradient(to right , #d18c75, #dfa66d, #d18c75, #d18c75);
+    }
+  }
+
+@media only screen and (max-width:600px)
+{
+
+ canvas
+ {
+ position: relative;
+  top: 2rem;
+    width: 100%;
+    grid-row: 1/2;
+    grid-column: 1/4;
+    width: 100vw;
+    height: 55vh;
+    z-index: 145;
+    
+ }
+ .txt
+ {
+    font-size: 3rem;
+   width: 90%;
+   height: 20%;
+   text-align: center;
+   
+ }
+ .gameOver
+ {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  align-self: start;
+  margin-top: 25%;
+ }
+.none{
+  display: none;
+}
+.arrows
+{
+  background-color: #2a302f79;
+ z-index: 1000;
+ width: 100vw;
+ height: 40vh;
+ grid-template-columns: 1fr 1fr;
+ grid-template-columns: 1fr 1fr;
+ justify-content: center;
+ border-radius: 1rem;
+ 
+}
+.up
+{
+  opacity: 1;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+ width: 15%;
+ height: 35%;
+ grid-row: 1/2;
+ grid-column: 1/3;
+ align-self: center;
+ justify-self: center;
+ transform: scale(2.5);
+ background-image: linear-gradient(to top , #244464, #1a3b5c,#6764b1);
+ transition: all 0.1s;
+}
+.up:active
+{
+ color: #de3125;
+ transform: scale(2.4);
+}
+
+.down
+{
+  opacity: 1;
+  width: 15%;
+ height: 35%;
+  grid-row: 3/2;
+ grid-column: 1/3;
+ transform: scale(2.5);
+ justify-self: center;
+ align-self: center;
+ border: none;
+  outline: none;
+  border-radius: 1rem;
+  background-image: linear-gradient(to bottom , #244464, #1a3b5c,#6764b1);
+  transition: all 0.1s;
+  
+}
+.down:active
+{
+ color: #de3125;
+ transform: scale(2.4);
+}
+.right
+{
+  opacity: 1;
+  width: 20%;
+ height: 25%;
+  grid-row: 1/3;
+ grid-column: 2/3;
+ transform: scale(2.5);
+ justify-self: center;
+ align-self: center;
+ border: none;
+  outline: none;
+  border-radius: 1rem;
+  background-image: linear-gradient(to right, #244464, #1a3b5c,#6764b1);
+  transition: all 0.1s;
+  position: relative;
+  left: 3rem;
+}
+.right:active
+{
+ color: #de3125;
+ transform: scale(2.4);
+}
+.left
+{
+  opacity: 1;
+  width: 20%;
+ height: 25%;
+  grid-row: 1/3;
+ grid-column: 1/2;
+ transform: scale(2.5);
+ justify-self: center;
+ align-self: center;
+ border: none;
+  outline: none;
+  border-radius: 1rem;
+  background-image: linear-gradient(to left , #244464, #1a3b5c,#6764b1);
+ transition: all 0.1s;
+ position: relative;
+ right: 3rem;
+}
+.left:active
+{
+ color: #de3125;
+ transform: scale(2.4);
+}
+.img1
+{
+  display: none;
+}
+.img2
+{
+  display: none;
+}
+
+
+
+
+
+
+}
+
+
+@media only screen and (max-width:350px)
+ {
+    canvas
+    {
+      z-index: 150;
+      position: relative;
+      top: 2rem;
+       width: 100%;
+       grid-row: 1/2;
+       grid-column: 1/4;
+       width: 100vw;
+       height: 55vh;
+       
+    }
+    .txt
+    {
+       font-size: 2rem;
+      width: 90%;
+      height: 20%;
+      text-align: center;
+      
+    }
+    .gameOver
+    {
+     grid-row: 1/2;
+     grid-column: 1/2;
+     align-self: start;
+     margin-top: 25%;
+    }
+    .arrows
+{
+  z-index: 145;
+ background-color: #2a302f79;
+ width: 100vw;
+ height: 40vh;
+ grid-template-columns: 1fr 1fr;
+ grid-template-columns: 1fr 1fr;
+ justify-content: center;
+ border-radius: 1rem;
+ 
+}
+.up
+{
+  opacity: 1;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+ width: 15%;
+ height: 35%;
+ grid-row: 1/2;
+ grid-column: 1/3;
+ align-self: center;
+ justify-self: center;
+ transform: scale(2.5);
+ background-image: linear-gradient(to top , #244464, #1a3b5c,#6764b1);
+ transition: all 0.1s;
+}
+.up:active
+{
+ color: #de3125;
+ transform: scale(2.4);
+}
+
+.down
+{
+  opacity: 1;
+  width: 15%;
+ height: 35%;
+  grid-row: 3/2;
+ grid-column: 1/3;
+ transform: scale(2.5);
+ justify-self: center;
+ align-self: center;
+ border: none;
+  outline: none;
+  border-radius: 1rem;
+  background-image: linear-gradient(to bottom , #244464, #1a3b5c,#6764b1);
+  transition: all 0.1s;
+  
+}
+.down:active
+{
+ color: #de3125;
+ transform: scale(2.4);
+}
+.right
+{
+  opacity: 1;
+  width: 20%;
+ height: 25%;
+  grid-row: 1/3;
+ grid-column: 2/3;
+ transform: scale(2.5);
+ justify-self: center;
+ align-self: center;
+ border: none;
+  outline: none;
+  border-radius: 1rem;
+  background-image: linear-gradient(to right, #244464, #1a3b5c,#6764b1);
+  transition: all 0.1s;
+  position: relative;
+  left: 3rem;
+}
+.right:active
+{
+ color: #de3125;
+ transform: scale(2.4);
+}
+.left
+{
+  opacity: 1;
+  width: 20%;
+ height: 25%;
+  grid-row: 1/3;
+ grid-column: 1/2;
+ transform: scale(2.5);
+ justify-self: center;
+ align-self: center;
+ border: none;
+  outline: none;
+  border-radius: 1rem;
+  background-image: linear-gradient(to left , #244464, #1a3b5c,#6764b1);
+ transition: all 0.1s;
+ position: relative;
+ right: 3rem;
+}
+.left:active
+{
+ color: #de3125;
+ transform: scale(2.4);
+}
+
+.img1
+{
+  display: none;
+}
+.img2
+{
+  display: none;
+}
+ }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+ 
+  <div class="imgs">
+    <div class="cont">
+    <img class="img1" src="./imgs/main-snake.jpeg" alt="img">
+    <img class="img2" src="./imgs/main-snake.jpeg" alt="img">
+  </div>
+  </div>
+  <audio src="./audio/music.mp3" autoplay loop></audio>
+    <div class="container">
+     <h3 class="levels remove">Level 1</h3>
+      
+ <div class="arrows none">
+  <button class="up">⬆ </button>
+  <button class="right">↪ </button>
+  <button class="left">↩ </button>
+  <button class="down">⬇</button>
+ </div>
+
+      <div class="gameOver">
+        <h3>⛔ Game over ⛔  </h3>
+        <button class="restart">Restart</button>
+   
+      </div>
+   
+      <canvas id="board" class="blur"></canvas>
+      <div class="all-txt animation"></div>
+      <div class="flex">
+        <h3 class="txt">Welcome to Snake Game</h3>
+        <button class="btn" >START  </button>
+
+      </div>
+      
+
+    </div>
+  
+
+    <script src="./js/main.js"></script>
+    <script src="./js/DOM.js"></script>
+</body>
+</html>
