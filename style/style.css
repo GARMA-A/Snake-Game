@@ -470,6 +470,8 @@ background-image: linear-gradient(to right top , #0b0e2a,#394a65,#394a65,#394a65
  transform: scale(2.5);
  background-image: linear-gradient(to top , #244464, #1a3b5c,#6764b1);
  transition: all 0.1s;
+      position: relative;
+    top: 1rem;
 }
 .up:active
 {
@@ -618,6 +620,8 @@ background-image: linear-gradient(to right top , #0b0e2a,#394a65,#394a65,#394a65
  transform: scale(2.5);
  background-image: linear-gradient(to top , #244464, #1a3b5c,#6764b1);
  transition: all 0.1s;
+     position: relative;
+    top: 1rem;
 }
 .up:active
 {
